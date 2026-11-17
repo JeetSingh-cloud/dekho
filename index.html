@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I’m Sorry, My Gelu ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3b2340;--rose:#ff5d8f;--glow:#ffb3cf;--fur:#c98b5a;--fur2:#e8b98a;--fur3:#f6dcc0;--dk:#6e4125;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(ellipse at 20% 0%,#2b1763 0%,transparent 55%),radial-gradient(ellipse at 90% 90%,#3a1450 0%,transparent 50%),linear-gradient(180deg,#070b2a,#12103b 55%,#24114a);
+ color:#fff;font-family:"Cormorant Garamond",Georgia,serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.moon{position:fixed;top:5vh;right:7vw;width:clamp(70px,14vw,130px);aspect-ratio:1;border-radius:50%;z-index:1;
+ background:radial-gradient(circle at 35% 30%,#fffdf0,#f4eac4 55%,#d9cc9c);
+ box-shadow:0 0 40px 10px rgba(255,244,200,.45),0 0 120px 50px rgba(190,170,255,.28);animation:moon 7s ease-in-out infinite alternate}
+.moon::before{content:"";position:absolute;inset:0;border-radius:50%;
+ background:radial-gradient(circle at 62% 35%,rgba(150,135,90,.25) 0 9%,transparent 10%),radial-gradient(circle at 35% 65%,rgba(150,135,90,.22) 0 12%,transparent 13%),radial-gradient(circle at 70% 70%,rgba(150,135,90,.18) 0 6%,transparent 7%)}
+@keyframes moon{to{box-shadow:0 0 55px 14px rgba(255,244,200,.55),0 0 150px 70px rgba(190,170,255,.34)}}
+#app{position:relative;z-index:2;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px 32px;text-align:center}
+.stage{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:560px;animation:fade 1.1s ease both}
+@keyframes fade{from{opacity:0;transform:scale(.97)}}
+h1{font-family:"Caveat",cursive;font-weight:700;font-size:clamp(2rem,7vw,3.2rem);margin:0;color:#ffd6e6;text-shadow:0 0 18px rgba(255,93,143,.7)}
+.sub{font-style:italic;font-size:clamp(1.05rem,3.4vw,1.35rem);color:#d9c8ff;margin:0}
+.bubble{position:relative;background:#fff;color:var(--ink);padding:12px 20px;border-radius:22px;font-family:"Caveat",cursive;font-weight:700;font-size:clamp(1.3rem,4.6vw,1.75rem);
+ box-shadow:0 0 30px rgba(255,179,207,.5);min-height:3rem;max-width:92%;animation:pop .45s cubic-bezier(.3,1.8,.5,1)}
+.bubble::after{content:"";position:absolute;left:50%;bottom:-12px;margin-left:-12px;border:12px solid transparent;border-bottom:0;border-top-color:#fff}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.teddy{width:min(72vw,300px);height:auto;overflow:visible;cursor:pointer;filter:drop-shadow(0 12px 22px rgba(0,0,0,.45));animation:bob 3.4s ease-in-out infinite;transform-origin:50% 100%;touch-action:manipulation}
+.teddy.hug{animation:hug .9s ease}
+.teddy.happy{animation:jump .7s ease-in-out infinite}
+.teddy.big{width:min(80vw,340px);filter:drop-shadow(0 0 30px rgba(255,60,100,.55))}
+@keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}
+@keyframes hug{0%{transform:scale(1)}30%{transform:scale(1.14,.88)}55%{transform:scale(.94,1.08)}100%{transform:scale(1)}}
+@keyframes jump{50%{transform:translateY(-20px) rotate(3deg)}}
+.blink{animation:blink 4.5s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.tear{animation:tear 2.6s ease-in infinite}
+@keyframes tear{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(26px);opacity:0}}
+.hrt{transform-box:fill-box;transform-origin:center;animation:beat 1.3s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.14)}}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+button{font-family:"Caveat",cursive;font-weight:700;font-size:clamp(1.3rem,4.5vw,1.65rem);color:#fff;border:0;border-radius:999px;padding:12px 26px;cursor:pointer;
+ background:linear-gradient(135deg,#ff6fa0,#c44bff);box-shadow:0 6px 24px rgba(255,93,143,.5),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .2s,box-shadow .2s;animation:fade .6s ease both}
+button:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 10px 32px rgba(255,93,143,.75)}
+button:active{transform:scale(.92)}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+button.alt{background:linear-gradient(135deg,#ffb347,#ff5d8f)}
+.hint{font-size:1rem;color:#bfa9ee;font-style:italic;margin:0}
+.p{position:fixed;z-index:9;pointer-events:none;font-size:var(--s);left:var(--x);bottom:var(--y);animation:rise var(--d) ease-out forwards}
+@keyframes rise{0%{opacity:0;transform:translate(0,0) scale(.3)}12%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-65vh) scale(1.25) rotate(var(--r))}}
+.letter{background:linear-gradient(160deg,#fff6ee,#ffe6ef);color:var(--ink);border-radius:18px;padding:clamp(22px,5vw,38px);text-align:left;width:100%;
+ box-shadow:0 0 0 6px rgba(255,255,255,.08),0 0 60px rgba(255,150,200,.45);font-family:"Caveat",cursive;font-size:clamp(1.4rem,4.8vw,1.85rem);line-height:1.45;transform:rotate(-.8deg)}
+.letter p{margin:0 0 .7em;animation:ink 1.4s ease both}
+.letter .sg{text-align:right;color:#c0305f;font-weight:700}
+@keyframes ink{from{opacity:0;filter:blur(6px);transform:translateY(8px)}}
+.type{font-family:"Caveat",cursive;font-size:clamp(1.8rem,6.6vw,2.6rem);color:#ffd6e6;text-shadow:0 0 16px rgba(255,93,143,.8);min-height:2.4em;margin:0}
+.type span{display:block;min-height:1.2em}
+.cur::after{content:"|";animation:cur .8s steps(1) infinite}
+@keyframes cur{50%{opacity:0}}
+.memory{max-width:520px;gap:26px}
+.scrap{position:relative;width:min(86vw,430px)}
+.frame{position:relative;background:#fff7f0;padding:14px 14px 50px;border-radius:6px;transform:rotate(-2.5deg);box-shadow:0 0 0 3px #ffb3cf,0 0 30px 8px rgba(255,93,143,.6),0 0 90px 24px rgba(196,75,255,.4);animation:glow 3.5s ease-in-out infinite alternate,fade 1.6s ease both}
+@keyframes glow{to{box-shadow:0 0 0 3px #ffd6e6,0 0 45px 14px rgba(255,93,143,.85),0 0 120px 40px rgba(196,75,255,.55)}}
+.pic{aspect-ratio:4/5;background:#2a1630;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#d9c8ff;font-size:1.2rem;padding:16px}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.tape{position:absolute;top:-14px;width:96px;height:28px;background:rgba(255,200,222,.75);box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.tape.a{left:-22px;transform:rotate(-36deg)}.tape.b{right:-22px;transform:rotate(36deg)}
+.hand{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-family:"Caveat",cursive;font-weight:700;font-size:1.6rem;color:#c0305f}
+.fl{position:absolute;left:var(--x);top:var(--y);font-size:var(--s);z-index:3;pointer-events:none;animation:flo var(--d) ease-in-out infinite alternate}
+@keyframes flo{from{transform:translateY(8px) rotate(-10deg);opacity:.9}to{transform:translateY(-22px) rotate(14deg);opacity:.35}}
+.cap{font-family:"Caveat",cursive;font-weight:700;font-size:clamp(1.8rem,6.4vw,2.5rem);color:#ffd6e6;text-shadow:0 0 16px rgba(255,93,143,.8);margin:0;max-width:92%}
+#music{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:30;width:46px;height:46px;padding:0;font-size:1.3rem;line-height:1;
+ background:rgba(255,255,255,.12);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 0 18px rgba(255,179,207,.55),inset 0 0 0 1px rgba(255,255,255,.3)}
+#music.off{opacity:.65;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+@media (prefers-reduced-motion:reduce){.teddy,.moon,.hrt,.tear,.happy{animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="moon"></div>
+<div id="app"></div>
+<button id="music" type="button" aria-label="Turn music off" title="Music on/off">🎵</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script>
+/* ---------- Starry sky (canvas): twinkling stars + shooting stars ---------- */
+(function(){
+  const c=document.getElementById("sky"),x=c.getContext("2d");
+  let W,H,stars=[],shots=[],dpr=Math.min(devicePixelRatio||1,2);
+  function size(){
+    W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.min(3500,Math.floor(W*H/330));
+    stars=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.2,p:Math.random()*6.28,s:Math.random()*2+.4,h:Math.random()<.2?"255,200,230":Math.random()<.4?"200,215,255":"255,255,240"}));
+  }
+  function shoot(){
+    const a=Math.PI*(.62+Math.random()*.12),sp=9+Math.random()*7;
+    shots.push({x:Math.random()*W*1.1,y:Math.random()*H*.4-20,vx:-Math.cos(a)*sp*-1,vy:Math.sin(a)*sp,l:0,max:60+Math.random()*30});
+  }
+  window.__shoot=(n=1)=>{for(let i=0;i<n;i++)setTimeout(shoot,i*250)};
+  function frame(t){
+    x.clearRect(0,0,W,H);
+    for(const s of stars){
+      const a=.35+.65*Math.abs(Math.sin(t/1000*s.s+s.p));
+      x.fillStyle="rgba("+s.h+","+a.toFixed(2)+")";
+      s.r>1?(x.beginPath(),x.arc(s.x,s.y,s.r,0,6.3),x.fill()):x.fillRect(s.x,s.y,s.r*1.4,s.r*1.4);
+    }
+    if(Math.random()<.008)shoot();
+    shots=shots.filter(o=>o.l<o.max);
+    for(const o of shots){
+      o.x+=o.vx;o.y+=o.vy;o.l++;
+      const g=x.createLinearGradient(o.x,o.y,o.x-o.vx*9,o.y-o.vy*9),f=1-o.l/o.max;
+      g.addColorStop(0,"rgba(255,255,255,"+f+")");g.addColorStop(1,"rgba(255,255,255,0)");
+      x.strokeStyle=g;x.lineWidth=2.2;x.lineCap="round";x.beginPath();x.moveTo(o.x,o.y);x.lineTo(o.x-o.vx*9,o.y-o.vy*9);x.stroke();
+      x.fillStyle="rgba(255,255,255,"+f+")";x.beginPath();x.arc(o.x,o.y,2,0,6.3);x.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+  addEventListener("resize",size);size();requestAnimationFrame(frame);
+})();
+
+
+/* ---------- Soft romantic music (generated live with Web Audio, no files needed) ---------- */
+(function(){
+  const btn=document.getElementById("music");
+  const VOL=.16; /* overall volume: soft and low */
+  const chords=[[261.63,329.63,392,523.25],[220,261.63,329.63,440],[174.61,261.63,349.23,440],[196,246.94,293.66,392]];
+  const bass=[130.81,110,87.31,98],pat=[0,1,2,3,2,1,3,2];
+  let ctx,master,on=true,started=false,bar=0,next=0,timer;
+  function init(){
+    const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+    ctx=new AC();master=ctx.createGain();master.gain.value=0;
+    const lp=ctx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=2600;
+    const dl=ctx.createDelay(1);dl.delayTime.value=.42;const fb=ctx.createGain();fb.gain.value=.38;
+    master.connect(lp);lp.connect(ctx.destination);lp.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(ctx.destination);
+    return true;
+  }
+  function tone(f,t,d,v,type){
+    const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.value=f;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.04);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05);
+  }
+  function schedule(){
+    if(!ctx||!on)return;
+    while(next<ctx.currentTime+2.5){
+      const c=chords[bar%4],t=next,beat=.6;
+      c.forEach(f=>tone(f,t,beat*8,.05,"sine"));
+      tone(bass[bar%4],t,beat*7,.09,"sine");
+      pat.forEach((p,i)=>tone(c[p]*2,t+i*beat,1.6,.07,"triangle"));
+      if(bar%2===1)tone(c[3]*4,t+beat*5,2.2,.03,"sine");
+      next+=beat*8;bar++;
+    }
+  }
+  function play(){
+    if(!ctx&&!init())return;
+    ctx.resume();if(!started){started=true;next=ctx.currentTime+.1}
+    master.gain.cancelScheduledValues(ctx.currentTime);master.gain.linearRampToValueAtTime(VOL,ctx.currentTime+2.5);
+    schedule();clearInterval(timer);timer=setInterval(schedule,800);
+  }
+  function stop(){
+    if(!ctx)return;clearInterval(timer);
+    master.gain.cancelScheduledValues(ctx.currentTime);master.gain.linearRampToValueAtTime(0,ctx.currentTime+.6);
+    setTimeout(()=>{if(!on)ctx.suspend()},700);
+  }
+  function show(){btn.textContent=on?"🎵":"🔇";btn.classList.toggle("off",!on);btn.setAttribute("aria-label",on?"Turn music off":"Turn music on")}
+  btn.addEventListener("click",()=>{on=!on;show();on?play():stop()});
+  /* browsers need a tap/click first, so music starts on the visitor's first interaction */
+  const first=e=>{if(e.target.closest&&e.target.closest("#music"))return;
+    removeEventListener("pointerdown",first,true);removeEventListener("keydown",first,true);if(on)play()};
+  addEventListener("pointerdown",first,true);addEventListener("keydown",first,true);
+  show();
+})();
+
+/* ---------- React app ---------- */
+const {useState,useEffect,useRef}=React;
+const h=React.createElement;
+
+/* Teddy bear (SVG). mood: sad | hug | happy */
+function Teddy({mood="sad",big=false,onClick}){
+  const happy=mood==="happy",hug=mood==="hug";
+  const eyes=(happy||hug)
+    ? [80,120].map(cx=>h("path",{key:cx,d:`M${cx-10} 100 q10 -${happy?14:8} 20 0`,stroke:"#3b2340",strokeWidth:5,fill:"none",strokeLinecap:"round"}))
+    : [80,120].map(cx=>h("g",{key:cx,className:"blink"},
+        h("circle",{cx,cy:99,r:11,fill:"#2a1630"}),
+        h("circle",{cx:cx+4,cy:94,r:4.2,fill:"#fff"}),
+        h("circle",{cx:cx-4,cy:104,r:2,fill:"#fff",opacity:.8})));
+  const mouth=happy?h("path",{d:"M86 122 q14 20 28 0z",fill:"#7a2a3a",stroke:"#3b2340",strokeWidth:3,strokeLinejoin:"round"})
+    :hug?h("path",{d:"M90 124 q10 9 20 0",stroke:"#3b2340",strokeWidth:3.5,fill:"none",strokeLinecap:"round"})
+    :h("path",{d:"M91 130 q9 -8 18 0",stroke:"#3b2340",strokeWidth:3.5,fill:"none",strokeLinecap:"round"});
+  const heart="M0 30 C-40 0 -34 -30 -15 -30 C-6 -30 0 -22 0 -18 C0 -22 6 -30 15 -30 C34 -30 40 0 0 30Z";
+  return h("svg",{className:"teddy "+(hug?"hug ":"")+(happy?"happy ":"")+(big?"big":""),viewBox:"0 0 200 235",onClick,role:"img","aria-label":"A cute teddy bear holding a heart"},
+    h("defs",null,
+      h("radialGradient",{id:"fg",cx:".4",cy:".3",r:".8"},h("stop",{offset:0,stopColor:"#e0a574"}),h("stop",{offset:1,stopColor:"#b87647"})),
+      h("radialGradient",{id:"hg",cx:".35",cy:".3",r:".8"},h("stop",{offset:0,stopColor:"#ff9ab8"}),h("stop",{offset:1,stopColor:"#e0143f"}))),
+    h("ellipse",{cx:68,cy:216,rx:21,ry:14,fill:"url(#fg)"}),h("ellipse",{cx:132,cy:216,rx:21,ry:14,fill:"url(#fg)"}),
+    h("ellipse",{cx:68,cy:218,rx:11,ry:7,fill:"#f2b8a4"}),h("ellipse",{cx:132,cy:218,rx:11,ry:7,fill:"#f2b8a4"}),
+    h("ellipse",{cx:100,cy:176,rx:48,ry:46,fill:"url(#fg)"}),
+    h("ellipse",{cx:100,cy:182,rx:30,ry:31,fill:"#f1c9a0"}),
+    /* head */
+    h("circle",{cx:58,cy:58,r:21,fill:"url(#fg)"}),h("circle",{cx:58,cy:58,r:11,fill:"#f2b8a4"}),
+    h("circle",{cx:142,cy:58,r:21,fill:"url(#fg)"}),h("circle",{cx:142,cy:58,r:11,fill:"#f2b8a4"}),
+    h("circle",{cx:100,cy:102,r:54,fill:"url(#fg)"}),
+    h("ellipse",{cx:100,cy:120,rx:24,ry:18,fill:"#f6dcc0"}),
+    h("ellipse",{cx:100,cy:111,rx:8,ry:5.5,fill:"#3b2340"}),
+    h("ellipse",{cx:98,cy:109.5,rx:2.6,ry:1.5,fill:"#fff",opacity:.7}),
+    h("ellipse",{cx:62,cy:118,rx:10,ry:6,fill:"#ff7fa5",opacity:happy||hug?.7:.4}),
+    h("ellipse",{cx:138,cy:118,rx:10,ry:6,fill:"#ff7fa5",opacity:happy||hug?.7:.4}),
+    eyes,
+    !happy&&!hug&&h("g",{stroke:"#6e4125",strokeWidth:4,strokeLinecap:"round"},h("line",{x1:66,y1:90,x2:90,y2:80}),h("line",{x1:110,y1:80,x2:134,y2:90})),
+    !happy&&!hug&&h("path",{className:"tear",d:"M71 108 q-5 9 0 12 q5 -3 0 -12z",fill:"#9fd8ff"}),
+    mouth,
+    /* heart in paws */
+    h("g",{transform:`translate(100 ${big?172:178}) scale(${big?1.55:.62})`},
+      h("path",{className:"hrt",d:heart,fill:"url(#hg)",style:big?{filter:"drop-shadow(0 0 10px #ff3d6e)"}:null}),
+      h("ellipse",{cx:-16,cy:-17,rx:8,ry:5,fill:"#fff",opacity:.55,transform:"rotate(-35 -16 -17)"})),
+    h("ellipse",{cx:56,cy:168,rx:15,ry:27,fill:"url(#fg)",transform:`rotate(${hug?-5:28} 56 168)`}),
+    h("ellipse",{cx:144,cy:168,rx:15,ry:27,fill:"url(#fg)",transform:`rotate(${hug?5:-28} 144 168)`}),
+    h("circle",{cx:hug?66:76,cy:hug?190:188,r:9,fill:"#e8b98a"}),h("circle",{cx:hug?134:124,cy:hug?190:188,r:9,fill:"#e8b98a"})
+  );
+}
+
+/* Floating hearts / sparkles / kisses */
+let pid=0;
+function useParticles(){
+  const [ps,set]=useState([]);
+  const spawn=(emojis,n=14)=>{
+    const add=Array.from({length:n},()=>({id:pid++,e:emojis[Math.floor(Math.random()*emojis.length)],x:20+Math.random()*60,y:12+Math.random()*28,
+      dx:(Math.random()-.5)*220,r:(Math.random()-.5)*60,s:16+Math.random()*26,d:2.2+Math.random()*2}));
+    set(p=>[...p,...add]);
+    const ids=add.map(a=>a.id);
+    setTimeout(()=>set(p=>p.filter(q=>!ids.includes(q.id))),4600);
+  };
+  const el=ps.map(p=>h("span",{key:p.id,className:"p",style:{"--x":p.x+"%","--y":p.y+"%","--dx":p.dx+"px","--r":p.r+"deg","--d":p.d+"s","--s":p.s+"px"}},p.e));
+  return [el,spawn];
+}
+
+const MSGS=["Gelu, please forgive me? 🥺","I’m so sorry, my Gelu… 💔","I’ll be a better cutie, I promise 🧸","Your cutie misses your smile so much ✨","Pleeease? I’ll share all my honey 🍯","I love you to the moon and back 🌙"];
+const LETTER=["My Gelu,","I know I might have hurt you, and I’m genuinely sorry.","I wish I could go back and make things right, but all I can do right now is tell you how much you mean to me.","You are special to me, and I never want you to doubt that.","I’m sorry for everything. Please don’t stay upset with your silly teddy.","I love you, Gelu. More than words can explain. ❤️"];
+const SIGN="Forever your little teddy bear. 🧸";
+const HEARTS=["❤️","💖","💕","✨","💗","🧸"];
+
+function useType(lines){
+  const [o,setO]=useState(lines.map(()=>""));
+  useEffect(()=>{
+    let li=0,ci=0,t;const ch=lines.map(l=>Array.from(l));
+    const tick=()=>{
+      if(li>=ch.length)return;
+      ci++;const a=li,b=ci;
+      setO(p=>{const n=[...p];n[a]=ch[a].slice(0,b).join("");return n});
+      if(ci>=ch[li].length){li++;ci=0;t=setTimeout(tick,1000)}else t=setTimeout(tick,75);
+    };
+    t=setTimeout(tick,900);return()=>clearTimeout(t);
+  },[]);
+  return o;
+}
+
+function Game({onDone}){
+  const [i,setI]=useState(0),[mood,setMood]=useState("sad"),[hugs,setHugs]=useState(0),[win,setWin]=useState(false);
+  const [parts,spawn]=useParticles();
+  const hug=()=>{
+    if(win)return;
+    setMood("hug");setHugs(n=>n+1);setI(n=>(n+1)%MSGS.length);spawn(HEARTS,16);
+    setTimeout(()=>setMood(m=>m==="hug"?"sad":m),900);
+  };
+  const forgive=()=>{
+    setWin(true);setMood("happy");window.__shoot(8);
+    let k=0;const iv=setInterval(()=>{spawn(["❤️","💖","💕","✨","🌟","💗"],12);if(++k>10)clearInterval(iv)},350);
+    setTimeout(onDone,5200);
+  };
+  return h("div",{className:"stage"},
+    h("h1",null,"I’m Sorry, My Gelu ❤️"),
+    h("div",{className:"bubble",key:win?"w":i},win?"Yaaay! Thank you, my Gelu! 🥹❤️":MSGS[i]),
+    h(Teddy,{mood,onClick:()=>{spawn(["💗","✨"],6)}}),
+    !win&&h("div",{className:"btns"},
+      h("button",{onClick:hug},"Give Teddy a Hug 🧸"),
+      hugs>0&&h("button",{className:"alt",onClick:forgive},"Okay, One More Chance? ❤️")),
+    !win&&h("p",{className:"hint"},hugs?"Teddy is hugging you back…":"Teddy is waiting under the stars. Try a hug."),
+    parts);
+}
+
+function Letter({onDone}){
+  const [n,setN]=useState(1);
+  useEffect(()=>{if(n<LETTER.length+1){const t=setTimeout(()=>setN(n+1),n===1?1800:2600);return()=>clearTimeout(t)}},[n]);
+  return h("div",{className:"stage"},
+    h("div",{className:"letter"},
+      LETTER.slice(0,n).map((l,k)=>h("p",{key:k},l)),
+      n>LETTER.length&&h("p",{className:"sg"},SIGN)),
+    n>LETTER.length&&h("button",{onClick:onDone},"One last thing… 💌"));
+}
+
+function Finale({onNext}){
+  const t=useType(["One last thing, Gelu...","Can I have my smile back? 🥺❤️"]);
+  const done=t[1]==="Can I have my smile back? 🥺❤️";
+  const [parts,spawn]=useParticles();
+  const [kissed,setK]=useState(false);
+  useEffect(()=>{window.__shoot(6);const iv=setInterval(()=>window.__shoot(2),2500);return()=>clearInterval(iv)},[]);
+  const kiss=()=>{setK(true);window.__shoot(5);spawn(["💋","😘","💋","❤️","💖","💕"],26)};
+  return h("div",{className:"stage"},
+    h(Teddy,{big:true,mood:kissed?"happy":"sad",onClick:()=>spawn(["💗","✨"],6)}),
+    h("p",{className:"type"},h("span",{className:t[1]?"":"cur"},t[0]),h("span",{className:t[1]&&!done?"cur":""},t[1])),
+    kissed&&h("div",{className:"bubble"},"Mwah! 💋 Best kiss ever. I love you, Gelu!"),
+    done&&h("button",{onClick:kiss},"Send Teddy a Kiss 💋"),
+    kissed&&h("button",{className:"alt",onClick:onNext},"One more surprise… 📸"),
+    parts);
+}
+
+/* Final section: our photo. Place your picture beside index.html and name it photo.jpg. */
+function Memory(){
+  const fl=useRef(Array.from({length:16},(_,i)=>({e:["❤️","✨","💖","⭐","💕","✨"][i%6],x:(i%2?-8:92)+(Math.random()*8-4)+"%",y:(i*6.3+Math.random()*4)+"%",s:14+Math.random()*18+"px",d:2+Math.random()*3+"s"}))).current;
+  useEffect(()=>{window.__shoot(6);const iv=setInterval(()=>window.__shoot(2),2200);return()=>clearInterval(iv)},[]);
+  const [parts,spawn]=useParticles();
+  useEffect(()=>{spawn(["❤️","✨","💕"],18);const iv=setInterval(()=>spawn(["❤️","✨","💖"],5),2500);return()=>clearInterval(iv)},[]);
+  return h("div",{className:"stage memory"},
+    h("div",{className:"scrap"},
+      fl.map((f,i)=>h("span",{key:i,className:"fl",style:{"--x":f.x,"--y":f.y,"--s":f.s,"--d":f.d}},f.e)),
+      h("div",{className:"frame"},h("i",{className:"tape a"}),h("i",{className:"tape b"}),
+        h("div",{className:"pic"},h("img",{src:"photo.jpg",alt:"Gelu and me together"})),
+        h("div",{className:"hand"},"Us. ❤️"))),
+    h("p",{className:"cap"},"My favourite place in the universe is wherever I am with you. ❤️"),
+    parts);
+}
+
+function App(){
+  const [s,setS]=useState(0);
+  return s===0?h(Game,{key:0,onDone:()=>setS(1)}):s===1?h(Letter,{key:1,onDone:()=>setS(2)}):s===2?h(Finale,{key:2,onNext:()=>setS(3)}):h(Memory,{key:3});
+}
+ReactDOM.createRoot(document.getElementById("app")).render(h(App));
+</script>
+</body>
+</html>
